@@ -1,0 +1,117 @@
+<!-- Our Styles -->
+<link rel="stylesheet" href="css/styles.css">
+
+<div class="container">
+    
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="images/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+
+        <form class="form-signin" action="#" method="post">
+
+            <span id="reauth-email" class="reauth-email"></span>
+
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" id="password" name="password" class="form-control" placeholder="password">
+            <!--<input type="password" id="password" name="confirmpassword" class="form-control" placeholder="confirm password"> -->
+            <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First name">
+            <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Last name">
+            <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone Number">
+            <input type="text" id="address" name="address" class="form-control" placeholder="Street Address">
+            <input type="text" id="city" name="city" class="form-control" placeholder="City">
+            <input type="text" id="state" name="state" class="form-control" placeholder="State">
+            <input type="text" id="zipcode" name="zipcode" class="form-control" placeholder="Zip Code">
+
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign Up!</button>
+
+        </form><!-- /form -->
+
+    </div><!-- /card-container -->
+</div><!-- /container -->
+
+<center>
+    <div>
+        <button>
+<a href="/login" style="color: black; text-decoration: none">Sign In</a>
+        </button>
+
+        <button>
+<a href="/" style="color: black; text-decoration: none">Shop</a>
+        </button>
+        
+        <button>
+<a href="/admin" style="color: black; text-decoration: none">Admin</a>
+        </button>
+    </div>
+</center>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+<script src="../assets/web/js/js.cookie.js"></script>
+<script type="text/javascript">
+
+$( document ).ready(function() {
+    
+    Cookies.remove('richwood-scentific-temp');
+        
+        var email = $('input[name="email"]').val();
+        var password = $('input[name="password"]').val();
+        var first_name = $('input[name="first_name"]').val();
+        var last_name = $('input[name="last_name"]').val();
+        var phone = $('input[name="phone"]').val();
+        var address = $('input[name="address"]').val();
+        var city = $('input[name="city"]').val();
+        var state = $('input[name="state"]').val();
+        var zipcode = $('input[name="zipcode"]').val();
+
+    $("form").submit(function() { 
+
+        event.preventDefault(); 
+        
+        var formData = {
+                       email: email,
+                       password: password,
+                       first_name: first_name,
+                       last_name: last_name,
+                       phone: phone,
+                       addres: address,
+                       city: city,
+                       state: state,
+                       zipcode: zipcode
+                    };
+
+        $.ajax({
+            url: "http://localhost:3000/api/customer",
+            dataType: "JSON",
+            type: "POST",
+            contentType: 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            data: formData,
+            success: function (result) {
+            
+            var id_customer = Cookies.get('richwood-scentific');
+
+            if(id_customer ) { // Logged in, cookie already exists
+                Cookies.set('richwood-scentific', id_customer);
+                console.log("using customer id: " + id_customer);
+                
+                window.location.href = "/"; 
+                } // End If
+            },
+            
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                // A failure will usually mean an account with this email already exists
+                // TODO: Properly test if it is a 403 (already exists) or something else
+                //window.location.href = "/signup";
+                alert(XMLHttpRequest, textStatus, errorThrown);
+                console.log(XMLHttpRequest, textStatus, errorThrown);
+                
+            }  // End error function
+            
+        }); // End ajax
+
+    }); // End form
+       
+}); // End document.ready 
+
+</script>

@@ -1,0 +1,189 @@
+<!-- Navigation -->
+    <div class="navigation">
+      <div class="navigation-left">
+        <a href="#" id="prod1">-</a>
+        <a href="#" id="prod2">-</a>
+        <a href="#" id="prod3">-</a>
+      </div>
+      <div class="navigation-center">
+        <img src="../assets/web/images/logo.png" alt="Richwood-scentific">
+      </div>
+      <div class="navigation-right">
+        <a href="#"><img src="../assets/web/images/shopping-bag.png" alt=""></a>
+        <button class="login-btn" href="#">Login</button>
+      </div>
+    </div>
+
+    <!-- Slider Wrapper -->
+    <div class="css-slider-wrapper">
+      <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
+      <input type="radio" name="slider" class="slide-radio2" id="slider_2">
+      <input type="radio" name="slider" class="slide-radio3" id="slider_3">
+      <input type="radio" name="slider" class="slide-radio4" id="slider_4">
+
+      <!-- Slider Pagination -->
+      <div class="slider-pagination">
+        <label for="slider_1" class="page1"></label> //continue shopping
+        <label for="slider_2" class="page2"></label> //checkout
+        <label for="slider_3" class="page3"></label> //payment info
+        <label for="slider_4" class="page4"></label> //shipping info
+      </div>
+
+      <!-- Slider #1 -->
+      <div class="slider slide-1" id="slide-1">
+        <img id= "i1" src= "" alt="">
+        <div class="slider-content">
+          <h4>New Product</h4>
+          <h2 id= "n1"></h2>
+          <button type="button" class="buy-now-btn" name="button" id= "b1"></button>
+        </div>
+        <div class="number-pagination">
+          <span>1</span>
+        </div>
+      </div>
+
+      <!-- Slider #2 -->
+      <div class="slider slide-2" id="slide-2">
+        <img id= "i2" src="#" alt="">
+        <div class="slider-content">
+          <h4>New Product</h4>
+          <h2 id= "n2"></h2>
+          <button type="button" class="buy-now-btn" name="button" id= "b2"></button>
+        </div>
+        <div class="number-pagination">
+          <span>2</span>
+        </div>
+      </div>
+
+      <!-- Slider #3 -->
+      <div class="slider slide-3" id="slide-3">
+        <img id="i3" src="" alt="">
+        <div class="slider-content">
+          <h4>New Product</h4>
+          <h2 id= "n3"></h2>
+          <button type="button" class="buy-now-btn" name="button" id= "b3"></button>
+        </div>
+        <div class="number-pagination">
+          <span>3</span>
+        </div>
+      </div>
+
+      <!-- Slider #4 -->
+      <div class="slider slide-4" id="slide-4">
+        <img id= "i4" src="" alt="">
+        <div class="slider-content">
+          <h4>New Product</h4>
+          <h2 id= "n4"></h2>
+          <button type="button" class="buy-now-btn" name="button" id= "b4"></button>
+        </div>
+        <div class="number-pagination">
+          <span>4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="../assets/web/js/app.js" charset="utf-8"></script>
+  <script src="../assets/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+</script>
+<script type="text/javascript">
+</script>
+                
+            <form action="http://localhost:3000/api/customers" method="POST" id="form">
+                
+Payment Information:
+                     
+        <div class="form-group">
+                    <label for="inputEmailAddress">Email Address</label>
+                    <input type="email" class="form-control" id="inputEmailAddress" name="email_address" placeholder="Enter Email Address">
+               </div>
+                     
+        <div class="form-group">
+                    <label for="inputPhoneNumber">Phone Number</label>
+                    <input class="form-control" type="text" id="inputPhoneNumber" name="phone_number" placeholder="Enter Phone Number">
+                </div>
+                     
+        <div class="form-group">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" name="first_name" placeholder="Enter first name">
+                </div>
+
+        <div class="form-group">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" name="last_name" placeholder="Enter last name">
+                </div>
+                     
+        <div class="form-group">
+                    <label for="inputShippingAddress">Address</label>
+                    <input class="form-control" type="text" id="inputShippingAddress" name="shipping_address" placeholder="Enter Shipping Address">
+                </div>
+                    
+        <div class="form-group">
+                    <label for="inputShippingCity">City</label>
+                     <input class="form-control" type="text" id="inputShippingCity" name="shipping_city" placeholder="Enter City">
+                 </div>
+                
+        <div class="form-group">
+                     <label for="inputShippingState">State</label>
+                     <input class="form-control" type="text" id="inputShippingState" name="shipping_state" placeholder="Enter State">
+                    </div>
+                
+        <div class="form-group">
+                    <label for="inputShippingZip">Zip Code</label>
+                    <input class="form-control" type="text" id="inputShippingZip" name="shipping_zip" placeholder="Enter Zip Code">
+                    </div>
+                
+                <button type="submit" name="submitButton" value="save" class="btn btn-primary">add customer</button>
+            </form>
+            
+Shipping Information:
+                     
+        <div class="form-group">
+                    <label for="inputEmailAddress">Email Address</label>
+                    <input type="email" class="form-control" id="inputEmailAddress" name="email_address" placeholder="Enter Email Address">
+               </div>
+                     
+        <div class="form-group">
+                    <label for="inputPhoneNumber">Phone Number</label>
+                    <input class="form-control" type="text" id="inputPhoneNumber" name="phone_number" placeholder="Enter Phone Number">
+                </div>
+                     
+        <div class="form-group">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" name="first_name" placeholder="Enter first name">
+                </div>
+
+        <div class="form-group">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" name="last_name" placeholder="Enter last name">
+                </div>
+                     
+        <div class="form-group">
+                    <label for="inputShippingAddress">Address</label>
+                    <input class="form-control" type="text" id="inputShippingAddress" name="shipping_address" placeholder="Enter Shipping Address">
+                </div>
+                    
+        <div class="form-group">
+                    <label for="inputShippingCity">City</label>
+                     <input class="form-control" type="text" id="inputShippingCity" name="shipping_city" placeholder="Enter City">
+                 </div>
+                
+        <div class="form-group">
+                     <label for="inputShippingState">State</label>
+                     <input class="form-control" type="text" id="inputShippingState" name="shipping_state" placeholder="Enter State">
+                    </div>
+                
+        <div class="form-group">
+                    <label for="inputShippingZip">Zip Code</label>
+                    <input class="form-control" type="text" id="inputShippingZip" name="shipping_zip" placeholder="Enter Zip Code">
+                    </div>
+                
+                <button type="submit" name="submitButton" value="save" class="btn btn-primary">add customer</button>
+            </form>
+
+            <hr class="mt-5">
+            <!-- Body Box -->
+

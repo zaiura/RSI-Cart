@@ -1,0 +1,190 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 sidebar">
+            <nav class="sidebar-nav">
+                <div class="sidebar-header">
+    <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
+    <span class="sr-only">Toggle nav</span></button>
+    <a class="sidebar-brand img-responsive" href="/admin"><span class="icon icon-leaf sidebar-brand-icon"></span></a>
+                </div>
+
+                <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
+
+                       <!-- Search for products -->
+                    <form class="sidebar-form">
+                        <input class="form-control" type="text" placeholder="Search...">
+                        <button type="submit" class="btn-link"><span class="icon icon-magnifying-glass"></span></button>
+                    </form>
+
+                        <!-- Side Nav Bar Top -->
+                    <ul class="nav nav-pills nav-stacked flex-column">
+                        <li class="nav-header">Main Data Tables</li>
+                        <li class="nav-item"><a class="nav-link" href="/admin">Admin Overview</a></li>
+
+                        <li class="nav-item">
+                            <div class="dropdown" id="customers">
+                                <button class="dropbtn">Customers</button>
+                                <div class="dropdown-content">
+                                    <a class="nav-link" href="/addcustomer">Add Customers</a>
+                                    <a class="nav-link" href="/updatecustomer">Update Customers</a>
+                                    <a class="nav-link" href="/viewcustomer">View Customers</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="dropdown" id="products">
+                                <button class="dropbtn">Products</button>
+                                <div class="dropdown-content">
+                                    <a class="nav-link" href="/addproduct">Add Products</a>
+                                    <a class="nav-link" href="/updateproduct">Update Products</a>
+                                    <a class="nav-link" href="/viewproduct">View Products</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="dropdown" id="product_types">
+                                <button class="dropbtn">Product Types</button>
+                                <div class="dropdown-content">
+                                    <a class="nav-link" href="/addproducttype">Add Product Types</a>
+                                    <a class="nav-link" href="/updateproducttype">Update Product Types</a>
+                                    <a class="nav-link" href="/viewproducttype">View Product Types</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="dropdown" id="scent_types">
+                            <button class="dropbtn">Scent Types</button>
+                                <div class="dropdown-content">
+                                    <a class="nav-link" href="/addscenttype">Add Scent Types</a>
+                                    <a class="nav-link" href="/updatescenttype">Update Scent Types</a>
+                                    <a class="nav-link" href="/viewscenttype">View Scent Types</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <div class="dropdown" id="suppliers">
+                            <button class="dropbtn">Suppliers</button>
+                                <div class="dropdown-content">
+                                    <a class="nav-link" href="/addsupplier">Add Suppliers</a>
+                                    <a class="nav-link" href="/updatesupplier">Update Suppliers</a>
+                                    <a class="nav-link" href="/viewsuppliers">View Suppliers</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+          <!-- Top page Bar -->
+        <div class="col-md-9 content">
+            <div class="dashhead">
+                <div class="dashhead-titles">
+                    <h6 class="dashhead-subtitle">Richwood Scent-ific</h6>
+                    <h2 class="dashhead-title">Add Suppliers</h2>
+                </div>
+            </div>
+
+                       <!-- Body Box -->
+            <hr class="mt-5">
+                
+            <form action="http://localhost:3000/api/product" method="POST" id="form">
+                <div class="form-group">
+                    <label for="inputName">Supplier's Name</label>
+                    <input type="text" class="form-control" id="inputName" name="name" placeholder="Enter supplier's name">
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-3">
+                      <label for="inputSize">Phone</label>
+                      <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="phone number">
+                    </div>
+                    <div class="col-3">
+                      <label for="inputType">Email</label>
+                      <input type="text" class="form-control" id="inputEmail" name="email" placeholder="email address">
+                    </div>
+                    <div class="col-3">
+                      <label for="inputType">Address</label>
+                      <input type="text" class="form-control" id="inputAddress" name="Address" placeholder="address">
+                    </div>
+                    <div class="col-3">
+                      <label for="inputType">City</label>
+                      <input type="text" class="form-control" id="inputCity" name="city" placeholder="city">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label for="inputUnitPrice">State</label>
+                        <input class="form-control" id="inputState" name="state" placeholder="state">
+                    </div>
+                    <div class="col-3">
+                        <label for="inputCost">Zip Code</label>
+                        <input class="form-control" id="inputZip" name="zip" placeholder="zip code">
+                    </div>
+                    <div class="col-3">
+                        <label for="qtyOnHand">Description</label>
+                        <textarea class="form-control" id="inputDescription" name="description" rows="3" placeholder="Enter a description"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" name="submitButton" value="save" class="btn btn-primary">save</button>
+                
+            </form>
+
+            <hr class="mt-5">
+
+        </div>
+
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/sweetalert.min.js"></script> 
+
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+
+        // process the form
+        $('form').submit(function(event) {
+
+            event.preventDefault();
+
+            var formData = {
+                'name'         : $('input[name=name]').val(),
+                'phone'         : $('input[name=phone]').val(),
+                'email'         : $('input[name=email]').val(),
+                'address'         : $('input[name=address]').val(),
+                'city'         : $('input[name=city]').val(),
+                'state'         : $('input[name=state]').val(),
+                'zip'         : $('input[name=zip]').val(),
+                'description'   : $('textarea[name=description]').val()
+            };
+
+            // process the form
+            $.ajax({
+                type        : 'POST',
+                url         : 'http://localhost:3000/api/suppliers',
+                data        : formData,
+                dataType    : 'json', 
+                encode      : true
+            })
+
+                .done(function(data) {
+                    $('#form').trigger("reset");
+                    // Alert
+                    swal("Success!", data.data.name + " was added.", "success");
+                })
+                .fail(function(data, jqXHR, textStatus, errorThrown){
+                    swal("Oops...", data.responseJSON.data.error, "error");
+                    console.log(data, jqXHR, textStatus, errorThrown);
+                });
+
+        }); // END form
+
+    }); // END document.ready
+  </script>
